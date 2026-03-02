@@ -8,7 +8,7 @@ on:
 
 # JOBS SECTION - What tasks to perform
 jobs:
-  deploy:                  # Name of the job
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
