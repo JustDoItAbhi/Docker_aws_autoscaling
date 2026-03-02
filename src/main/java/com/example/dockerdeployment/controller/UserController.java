@@ -32,7 +32,7 @@ private HealthEndpoint healthEndpoint;
     @GetMapping(value = {"", "/status"})
     public ResponseEntity<String> check() {
         String health = healthEndpoint.health().getStatus().getCode();
-        return ResponseEntity.ok("{\"status\":\"" + health + "\"}");
+        return ResponseEntity.ok("{\"state\":\"" + health + "\"}");
     }
 
 @GetMapping("/")
