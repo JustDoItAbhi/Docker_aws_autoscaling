@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>SIGNUP</title>
+</head>
+<body
+        style="font-weight: 900; background-color: blue; padding:250px;  color: white; align-items: center; display: inline-block;">
+<h1>SIGNUP</h1>
+
+<form  th:action= "@{/create}" th:object="${user}" method="post" >
+    NAME :
+    <input type="text" th:field="*{name}" /><br/><br/><br/>
+    EAMIL :
+    <input type="email" th:field="*{email}" /><br/><br/><br/>
+    <button type="submit">REGISTER</button>
+</form>
+</body>
+</html>
