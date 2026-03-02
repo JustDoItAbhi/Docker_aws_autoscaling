@@ -38,7 +38,7 @@ private HealthEndpoint healthEndpoint;
 @GetMapping("/")
 public String getHtmlForCreate(HttpServletRequest request){
     String ip=request.getRemoteAddr();
-    System.out.println("THIS IS IP ADDRESS ------------"+ip);
+    System.out.println("THIS IS IP ADDRESSss ------------"+ip);
     return "index";
 }
     @GetMapping("/signup")
