@@ -62,3 +62,14 @@ jobs:
           aws autoscaling start-instance-refresh \
           --auto-scaling-group-name ${{ secrets.ASG_NAME }} \
           --preferences '{"MinHealthyPercentage": 50, "InstanceWarmup": 300}'  # Fixed: 'MinHeathyPrecentage' → 'MinHealthyPercentage'
+      # STEP 3: Compile your Java code and create JAR file
+      - name: Build with Maven
+        run: |
+          # Check if maven wrapper exists
+          if [ -f "./mvnw" ]; then
+            chmod +x ./mvnw
+            ./mvnw clean package -DskipTests
+          else
+            # Use system maven if available
+            mvn clean package -DskipTests
+          fi
